@@ -233,7 +233,7 @@ def filter_postfix(data):
 	postfix_timeouts(data)
 
 def extract_vp_data(data):
-	'''Extract data as data=value pais from any line and return it as array
+	'''Extract data as data=value pairs from any line and return it as array
 	any <> will been trimed away'''
 
 	sd = data.split(r" ")

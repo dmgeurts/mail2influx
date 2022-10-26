@@ -40,7 +40,7 @@ You need to install python-influxdb support, search it on the repository or use 
 
 ## Known issues
 
-~~- No authentication against the influxdb, no need on my env~~
+- ~~No authentication against the influxdb, no need on my env~~
 - No ssl/tls against the influxdb, no need on my env
 - May contain bugs (code is a work in progress)
 - May not be 100% optimized

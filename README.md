@@ -8,7 +8,7 @@ A simple mail log data parser and influx data injector. It can parse any log gen
 
 The original code did not do authentication to InfluxDB. So I've added the auth options including api-key based authentication.
 
-[dmgeurts](https://github.com/dmgeurts)
+-- [dmgeurts](https://github.com/dmgeurts)
 
 ## Motivation
 

@@ -20,7 +20,10 @@ except:
 ### user configurable settings:
 influxhost = "192.168.0.15"
 influxdb = 'mail'
-logfile="/var/log/mail.log"
+logfile = "/var/log/mail.log"
+influx_uid = "None"
+influx_pwd = "None"
+influx_key = "your:api-key"
 ### End onf the user configrations
 
 # triggers
@@ -51,11 +54,13 @@ p = select.poll()
 # declare the measurements array
 measurements = []
 
-def init_influx(ihost, db):
+def init_influx(ihost, db, uid, pwd, apikey):
 	'''Connect to the influx server'''
 
 	try:
-		client = InfluxDBClient(host=ihost, port=8086)
+		client = InfluxDBClient(host=ihost, port=8086,
+				       username=uid, password=pwd,
+				       headers={"Authorization": apikey})
 
 		# check if the db exist and creat if not
 		dbs = client.get_list_database()
@@ -475,11 +480,11 @@ if __name__ == '__main__':
 	f = follow(logfile)
 
 	# setup the influx client
-	influx = init_influx(influxhost, influxdb)
+	influx = init_influx(influxhost, influxdb, influx_uid, influx_pwd, influx_key)
 	while not influx:
 		print(r"Influxdb server connection error, will try in 3 seconds")
 		time.sleep(3)
-		influx = init_influx(influxhost, influxdb)
+		influx = init_influx(influxhost, influxdb, influx_uid, influx_pwd, influx_key)
 
 	print(r"InfluxDB reached and connected!")
 

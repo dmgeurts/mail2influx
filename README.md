@@ -20,7 +20,7 @@ You need to install python-influxdb support, search it on the repository or use 
 
 ~~And no, you don't need to create the influxdb database in advance, mail2influx take care of that too, just be sure to name it as your wish in the user variables in the header of the script.~~ Using api-keys requires the database to be created and the api-key to be given write privileges to this database. The code hasn't been altered, but if using an api-key you must create the database and the api-key before configuring the script to use them.
 
-0. Clone this repository to somewhere in you PC `git clone https://github.com/stdevPavelmc/mail2influx && cd mail2influx` 
+0. Clone this repository to somewhere in you PC `git clone https://github.com/dmgeurts/mail2influx && cd mail2influx` 
 1. Copy the "mail2influx.py" script to `/usr/local/bin/`
 2. Make it executable `chmod +x /usr/local/bin/mail2influx.py`
 3. Edit the `/usr/local/bin/mail2influx.py` file and change:
